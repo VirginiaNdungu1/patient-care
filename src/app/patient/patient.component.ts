@@ -10,6 +10,7 @@ import { PatientService } from '../patients/patient.service';
   styleUrls: ['./patient.component.css']
 })
 export class PatientComponent implements OnInit {
+  newPatient: Patient;
   // update property patients - give it a type Patient
   patients: Patient[];
   // inject the service to the constructor
@@ -20,6 +21,7 @@ export class PatientComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   // create the addNewPatient function - takes patient object as an arg
@@ -29,10 +31,10 @@ export class PatientComponent implements OnInit {
   addNewPatient(patient) {
     let patientLength = this.patients.length;
     patient.id = patientLength += 1;
-    this.patients.push(patient)
+    this.patients.push(patient);
 
   }
-
-
-
+  deletePatient(index) {
+    this.patients.splice(index, 1)
+  }
 }
