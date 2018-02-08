@@ -1,6 +1,6 @@
 <div class="container">
   <div class="content-intro">
-    <button type="button" name="button" class="btn btn-lg">Add Patient</button>
+    <button type="button" name="button" class="btn btn-lg" sss>Add Patient</button>
   </div>
 
   <table class="table table-striped">
@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let patient of patients'>
+      <tr *ngFor='let patient of patients;let i = index'>
         <td>{{patient.id}}</td>
         <td>{{patient.first_name}}</td>
         <td>{{patient.last_name}}</td>
@@ -25,10 +25,10 @@
         <td>{{patient.tel}}</td>
         <td>{{patient.email}}</td>
         <td>
-          <button type="button" name="button">Edit</button>
+          <button type="button" (click)="editSelectedPatient(patient)" name="button">Edit</button>
         </td>
         <td>
-          <button type="button" name="button">Delete</button>
+          <button (click)="deletePatient(i)" name="button">Delete</button>
         </td>
       </tr>
     </tbody>
