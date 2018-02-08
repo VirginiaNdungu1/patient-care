@@ -14,6 +14,17 @@ export class PatientComponent implements OnInit {
     new Patient(5, 'Kevin', 'Mbuthia', '1990/11/15', '+254 715 101 318', 'kevin.mbuthia@gmail.com'),
     new Patient(6, 'Newton', 'Kiragu', '1997/7/10', '+254 712 824 175', 'kiragu.newton@gmail.com'),
   ]
+
+  // create the addNewPatient function - takes patient object as an arg
+  // find length of the array of patients
+  // set the new patient id to patientLength +1
+  // Add the new patient to the array of patients
+  addNewPatient(patient) {
+    let patientLength = this.patients.length;
+    patient.id = patientLength += 1;
+    this.patients.push(patient)
+  }
+
   constructor() { }
 
   ngOnInit() {
