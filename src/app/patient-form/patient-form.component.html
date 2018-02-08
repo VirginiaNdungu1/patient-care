@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- add a template reference variable patientForm to form tag and equate it to ngForm.  -->
+    <!-- handles validity issues  -->
+
+    <!-- (ngSubmit) event calls a function that handles form inputs  -->
+    <form (ngSubmit)='submitPatient()' #patientForm='ngForm'>
+      <div class="form-group">
+        <label for="name">First Name</label>
+        <input type="text" required class="form-control" id="first_Name" [(ngModel)]="newPatient.first_name" name="first_name">
+      </div>
+      {{newPatient.first_name}}
+      <div class="form-group">
+        <label for="description">Last Name</label>
+        <input type="text" required class="form-control" id="last_name" [(ngModel)]="newPatient.last_name" name="last_name">
+      </div>
+      {{newPatient.last_name}}
+      <div class="form-group">
+        <label for="description">D.O.B</label>
+        <input type="text" required class="form-control" id="dob" [(ngModel)]="newPatient.dob" name="dob">
+      </div>
+      {{newPatient.dob}}
+      <div class="form-group">
+        <label for="description">Telephone</label>
+        <input type="text" required class="form-control" id="tel" [(ngModel)]="newPatient.tel" name="last_name" tel>
+      </div>
+      {{newPatient.tel}}
+      <div class="form-group">
+        <label for="description">Email</label>
+        <input type="email" required class="form-control" id="email" [(ngModel)]="newPatient.email" name="email">
+      </div>
+      {{newPatient.email}}
+      <div class="form-group">
+        <button type="submit" class="btn btn-lg" name="button">Create</button>
+      </div>
+    </form>
+  </div>
+</div>
