@@ -6,13 +6,15 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PatientComponent } from './patient/patient.component';
 import { PatientFormComponent } from './patient-form/patient-form.component';
+import { EditPatientComponent } from './edit-patient/edit-patient.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PatientComponent,
-    PatientFormComponent
+    PatientFormComponent,
+    EditPatientComponent
   ],
   imports: [
     BrowserModule,
