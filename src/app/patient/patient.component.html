@@ -33,7 +33,9 @@
   </table>
   <h1>Patient Form</h1>
   <div class="center">
-    <app-patient-form></app-patient-form>
+    <!-- Add output event (triggers the addNewPatient class
+    passing in the new patient that was emitted) -->
+    <app-patient-form (addPatient)="addNewPatient($event)"></app-patient-form>
   </div>
 
 </div>
