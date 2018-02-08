@@ -2,7 +2,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 // import Patient Class
-import { Patient } from '../patient'
+import { Patient } from '../patient-model'
 
 @Component({
   selector: 'app-patient-form',
