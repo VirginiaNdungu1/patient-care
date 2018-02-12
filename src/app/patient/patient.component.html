@@ -1,7 +1,14 @@
 <div class="container">
+
+  <button type="button" id="addPatient" name="button" (click)="newPatient=!newPatient" class="btn btn-lg">Add Patient</button>
+
+  <!--
   <div class="content-intro">
-    <button type="button" name="button" class="btn btn-lg" sss>Add Patient</button>
+    <button type="button" name="button" class="btn btn-lg">Add Patient</button>
   </div>
+  <div class="createPatient">
+    <h1>Create Patient</h1>
+  </div> -->
 
   <table class="table table-striped">
     <thead>
@@ -25,7 +32,7 @@
         <td>{{patient.tel}}</td>
         <td>{{patient.email}}</td>
         <td>
-          <button type="button" (click)="editSelectedPatient(patient)" name="button">Edit</button>
+          <button type="button" name="button" [class.selected]="patient === selectedPatient" (click)="onSelect(patient)">Edit</button>
         </td>
         <td>
           <button (click)="deletePatient(i)" name="button">Delete</button>
@@ -33,11 +40,43 @@
       </tr>
     </tbody>
   </table>
-  <h1>Patient Form</h1>
-  <div class="center">
-    <!-- Add output event (triggers the addNewPatient class
-    passing in the new patient that was emitted) -->
+  <!-- Add output event (triggers the addNewPatient class
+passing in the new patient that was emitted) -->
+  <div *ngIf="newPatient">
+    <h1>Add New Patient</h1>
     <app-patient-form (addPatient)="addNewPatient($event)"></app-patient-form>
   </div>
 
+  <div *ngIf="selectedPatient" class="center">
+    <h2>{{selectedPatient.first_name | uppercase }}
+      Details</h2>
+    <div class="form-group">
+      <label for="name">First Name</label>
+      <input type="text" required class="form-control" id="first_Name" [(ngModel)]="selectedPatient.first_name" name="first_name">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Last Name</label>
+      <input type="text" required class="form-control" id="last_name" [(ngModel)]="selectedPatient.last_name" name="last_name">
+    </div>
+
+    <div class="form-group">
+      <label for="description">D.O.B</label>
+      <input type="text" required class="form-control" id="dob" [(ngModel)]="selectedPatient.dob" name="dob">
+    </div>
+
+    <div class="form-group">
+      <label for="description">Telephone</label>
+      <input type="text" required class="form-control" id="tel" [(ngModel)]="selectedPatient.tel" name="last_name" tel>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Email</label>
+      <input type="email" required class="form-control" id="email" [(ngModel)]="selectedPatient.email" name="email">
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-lg" name="button">Create</button>
+    </div>
+  </div>
 </div>
