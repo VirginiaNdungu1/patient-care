@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { PatientComponent } from './patient/patient.component';
 import { PatientFormComponent } from './patient-form/patient-form.component';
 import { EditPatientComponent } from './edit-patient/edit-patient.component';
-import { FilterPipe } from './pipes';
+import { FilterPipe } from './searchpatient.pipe';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,7 @@ import { FilterPipe } from './pipes';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule,
-
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

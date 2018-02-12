@@ -2,14 +2,13 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Patient } from '../patient-model';
 import { Patients } from '../patients';
 import { PatientService } from '../patients/patient.service';
-import { FilterPipe } from '../pipes';
+import { FilterPipe } from '../searchpatient.pipe';
 
 @Component({
   selector: 'app-patient',
   templateUrl: './patient.component.html',
   providers: [PatientService],
-  styleUrls: ['./patient.component.css'],
-  pipes: [FilterPipe]
+  styleUrls: ['./patient.component.css']
 })
 export class PatientComponent implements OnInit {
   // newPatient = new Patient(0, '', '', '', '', '');
