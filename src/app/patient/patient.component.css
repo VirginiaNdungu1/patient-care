@@ -8,3 +8,19 @@
   background-color: teal;
   color: white;
 }
+
+.createPatient {
+  margin-top: 5%;
+}
+
+#addPatient {
+  margin-bottom: 10%;
+  float: left;
+  background-color: teal;
+  color: white;
+}
+
+
+/*form {
+  margin-top: 10%;
+}*/
