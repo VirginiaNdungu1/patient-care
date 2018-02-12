@@ -1,3 +1,41 @@
-<p>
-  edit-patient works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div *ngIf="NewSelectedPatient">
+
+      <!-- add a template reference variable patientForm to form tag and equate it to ngForm.  -->
+      <!-- handles validity issues  -->
+
+      <!-- (ngSubmit) event calls a function that handles form inputs  -->
+      <!-- <form (ngSubmit)='submitPatient()' #patientForm='ngForm'> -->
+      <div class="form-group">
+        <label for="name">First Name</label>
+        <input type="text" required class="form-control" id="first_Name" [(ngModel)]="NewSelectedPatient.first_name" name="first_name">
+      </div>
+      {{NewSelectedPatient.first_name}}
+      <div class="form-group">
+        <label for="description">Last Name</label>
+        <input type="text" required class="form-control" id="last_name" [(ngModel)]="NewSelectedPatient.last_name" name="last_name">
+      </div>
+      {{NewSelectedPatient.last_name}}
+      <div class="form-group">
+        <label for="description">D.O.B</label>
+        <input type="text" required class="form-control" id="dob" [(ngModel)]="NewSelectedPatient.dob" name="dob">
+      </div>
+      {{NewSelectedPatient.dob}}
+      <div class="form-group">
+        <label for="description">Telephone</label>
+        <input type="text" required class="form-control" id="tel" [(ngModel)]="NewSelectedPatient.tel" name="last_name" tel>
+      </div>
+      {{NewSelectedPatient.tel}}
+      <div class="form-group">
+        <label for="description">Email</label>
+        <input type="email" required class="form-control" id="email" [(ngModel)]="NewSelectedPatient.email" name="email">
+      </div>
+      {{NewSelectedPatient.email}}
+      <div class="form-group">
+        <button (click)="doneEditing()" type="submit" class="btn btn-lg" name="button">Create</button>
+      </div>
+      <!-- </form> -->
+    </div>
+  </div>
+</div>
