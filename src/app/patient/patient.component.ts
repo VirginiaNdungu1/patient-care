@@ -2,12 +2,14 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Patient } from '../patient-model';
 import { Patients } from '../patients';
 import { PatientService } from '../patients/patient.service';
+import { FilterPipe } from '../pipes';
 
 @Component({
   selector: 'app-patient',
   templateUrl: './patient.component.html',
   providers: [PatientService],
-  styleUrls: ['./patient.component.css']
+  styleUrls: ['./patient.component.css'],
+  pipes: [FilterPipe]
 })
 export class PatientComponent implements OnInit {
   // newPatient = new Patient(0, '', '', '', '', '');
@@ -44,6 +46,7 @@ export class PatientComponent implements OnInit {
   onSelect(patient: Patient): void {
     this.selectedPatient = patient;
   }
+
   // openForEdit(patient: Patient): void {
   //   this.selectedPatient = patient;
   // }
