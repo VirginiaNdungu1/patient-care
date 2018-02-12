@@ -1,14 +1,12 @@
 <div class="container">
-
-  <button type="button" id="addPatient" name="button" (click)="newPatient=!newPatient" class="btn btn-lg">Add Patient</button>
-
-  <!--
   <div class="content-intro">
-    <button type="button" name="button" class="btn btn-lg">Add Patient</button>
+    <div class="newPatient-intro">
+      <button type="button" id="addPatient" name="button" (click)="newPatient=!newPatient" class="btn btn-lg">Add Patient</button>
+    </div>
+    <div class="search-section">
+      <input type="text" [(ngModel)]="queryString" id="search" placeholder="Search Patient" class="form-control">
+    </div>
   </div>
-  <div class="createPatient">
-    <h1>Create Patient</h1>
-  </div> -->
 
   <table class="table table-striped">
     <thead>
