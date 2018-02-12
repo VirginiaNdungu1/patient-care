@@ -44,7 +44,6 @@ export class PatientComponent implements OnInit {
   onSelect(patient: Patient): void {
     this.selectedPatient = patient;
   }
-
   // openForEdit(patient: Patient): void {
   //   this.selectedPatient = patient;
   // }
