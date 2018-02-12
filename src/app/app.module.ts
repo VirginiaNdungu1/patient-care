@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FilterPipe } from './pipes';
+
 
 
 import { AppComponent } from './app.component';
@@ -21,6 +23,7 @@ import { EditPatientComponent } from './edit-patient/edit-patient.component';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    FilterPipe
   ],
   providers: [],
   bootstrap: [AppComponent]
