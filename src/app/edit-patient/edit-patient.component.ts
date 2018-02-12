@@ -12,5 +12,4 @@ export class EditPatientComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
