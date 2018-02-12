@@ -22,7 +22,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor='let patient of patients;let i = index'>
+      <tr *ngFor="let patient of patients | FilterPipe: queryString;let i = index">
         <td>{{patient.id}}</td>
         <td>{{patient.first_name}}</td>
         <td>{{patient.last_name}}</td>
