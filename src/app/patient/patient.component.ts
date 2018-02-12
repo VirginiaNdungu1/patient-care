@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Patient } from '../patient-model';
 import { Patients } from '../patients';
 import { PatientService } from '../patients/patient.service';
@@ -10,7 +10,7 @@ import { PatientService } from '../patients/patient.service';
   styleUrls: ['./patient.component.css']
 })
 export class PatientComponent implements OnInit {
-  newPatient: Patient;
+  // newPatient = new Patient(0, '', '', '', '', '');
   // update property patients - give it a type Patient
   patients: Patient[];
   // inject the service to the constructor
@@ -24,6 +24,8 @@ export class PatientComponent implements OnInit {
 
   }
 
+  newPatient = false;
+
   // create the addNewPatient function - takes patient object as an arg
   // find length of the array of patients
   // set the new patient id to patientLength +1
@@ -32,9 +34,18 @@ export class PatientComponent implements OnInit {
     let patientLength = this.patients.length;
     patient.id = patientLength += 1;
     this.patients.push(patient);
-
+    this.newPatient = false;
   }
   deletePatient(index) {
     this.patients.splice(index, 1)
   }
+  selectedPatient: Patient;
+
+  onSelect(patient: Patient): void {
+    this.selectedPatient = patient;
+  }
+
+  // openForEdit(patient: Patient): void {
+  //   this.selectedPatient = patient;
+  // }
 }
